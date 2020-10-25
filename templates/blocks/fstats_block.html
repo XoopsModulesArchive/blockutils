@@ -1,0 +1,26 @@
+<table class="outer" cellspacing="1">
+<tr>
+<th><{$block.user}></td>
+<th><{$block.total}></td>
+</tr>
+<{if $block.direction !="fixed"}>
+<marquee behavior="scroll" direction="<{$block.direction}>" width="100%" height="80" scrollamount="1" scrolldelay="60" onmouseover="this.stop()" onmouseout="this.start()">
+<{/if}>
+      <!-- start block loop -->
+      <{foreach item=fstats from=$block.contents}>
+<tr class="<{cycle values="even,odd"}>">
+<td><a href="<{$xoops_url}>/modules/newbb/viewforum.php?forum=<{$fstats.forum_id}>"><{$fstats.forum_name}></a></td>
+<td align="center"><{$fstats.posts}></td>
+      <{/foreach}>
+      <!-- end block loop -->
+<{if $block.direction !="fixed"}>
+</marquee>
+<{/if}>
+</table>
+<div style="text-align:right; padding: 5px;">
+<a href="<{$xoops_url}>/modules/newbb/"><{$block.lang_visitforums}></a>
+</div>
+<{if $block.info !=""}>
+<HR>
+<{$block.info}>
+<{/if}>

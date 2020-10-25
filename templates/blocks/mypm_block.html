@@ -1,0 +1,22 @@
+<table class="outer" cellspacing="0">
+<tr class="head">
+<td valign="middle" align="left"><b><{$block.user}></b></td>
+<td valign="middle" align="center"><center>[<font color=#009900><b><{$block.read}></b></font>]</center></td>
+<td valign="middle" align="center"><center>[<font color=#990000><b><{$block.unread}></b></font>]</center></td>
+<td valign="middle" align="center"><center>[<font color=#990000><b><{$block.total}></b></font>]</center</td>
+<tr>
+      <!-- start block loop -->
+      <{foreach item=mypm from=$block.contents}>
+<tr class="<{cycle values="even,odd"}>" valign="middle">
+<td align="left"><a href="<{$xoops_url}>/userinfo.php?uid=<{$mypm.uid}>"><{$mypm.uname}></a></td>
+<td align="center" width="20%">[<{$mypm.read}>]</td>
+<td align="center" width="20%">[<{$mypm.unread}>]</td>
+<td align="center" width="20%">[<{$mypm.total}>]</td>
+<tr>
+      <{/foreach}>
+      <!-- end block loop -->
+</table>
+<{if $block.info !=""}>
+<HR>
+<{$block.info}>
+<{/if}>

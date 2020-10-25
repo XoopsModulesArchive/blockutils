@@ -1,0 +1,17 @@
+<{if $block.direction !="fixed"}>
+<marquee behavior="scroll" direction="<{$block.direction}>" width="100%" height="80" scrollamount="1" scrolldelay="60" onmouseover="this.stop()" onmouseout="this.start()">
+<{/if}>
+
+      <!-- start module menu loop -->
+      <{foreach item=pm from=$block.contents}>
+
+<b><i><{$pm.counter}></i></b>&nbsp;
+<a href="<{$xoops_url}>/userinfo.php?uid=<{$pm.uid}>"><{$pm.uname}></a>&nbsp;<{$pm.pm}><br>
+      <{/foreach}>
+      <!-- end module menu loop -->
+
+<{if $block.direction !="fixed"}>
+</marquee>
+<{/if}>
+<HR>
+<{$block.info}>
